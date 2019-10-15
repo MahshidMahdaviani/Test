@@ -1,0 +1,13 @@
+﻿
+
+
+@{ 
+    if(DateTime.Now.Hour > 13)
+    {
+        Layout = "~/Views/Shared/Layouts/_siteLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/Layouts/_siteLayoutLight.cshtml";
+    }
+}

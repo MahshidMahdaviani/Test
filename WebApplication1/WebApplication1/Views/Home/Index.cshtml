@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication1.Models.Personnel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        msg: @ViewData["msg"]
+    </div>
+    <div>
+       msg: @ViewBag.message2
+    </div>
+    <br/>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>PresonnelCode</th>
+        </tr>
+        @foreach(var item in ViewBag.Data)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.PersonnelCode
+                </td>
+            </tr>
+        }
+        @foreach(var i in Model)
+        {
+            <tr>
+                <td>
+                    @i.Name
+                </td>
+                <td>
+                    @i.PersonnelCode
+                </td>
+            </tr>
+        }
+    </table>
+    @Html.Partial("~/Views/_PartialViewSample.cshtml")
+</body>
+</html>
